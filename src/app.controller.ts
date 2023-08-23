@@ -11,6 +11,11 @@ export class AppController {
   getHi(): string {
     return 'Good morning!';
   }
+
+  @Get('ab*cd')
+  getWildcard(): string {
+    return 'This route uses a wildcard';
+  }
 }
 
 // import { AppService } from './app.service';
