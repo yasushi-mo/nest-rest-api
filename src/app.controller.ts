@@ -18,9 +18,15 @@ export class AppController {
   }
 
   @Get(':name')
-  getHelloWithName(@Param() params: { name: string }): string {
-    console.log(params.name);
-    return `Hello, ${params.name}!`;
+  getHelloWithName(@Param('name') name: string): string {
+    console.log(name);
+    return `Hello, ${name}!`;
+  }
+
+  @Get('good-morning/:name')
+  getGoodMorningWithName(@Param() params: { name: string }): string {
+    console.log(params);
+    return `Good morning, ${params.name}!`;
   }
 }
 
