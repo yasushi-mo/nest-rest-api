@@ -8,7 +8,7 @@ export class AppController {
   }
 
   @Get('good-morning')
-  getHi(): string {
+  getGoodMorning(): string {
     return 'Good morning!';
   }
 
