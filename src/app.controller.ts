@@ -1,4 +1,4 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Param } from '@nestjs/common';
 
 @Controller('greetings')
 export class AppController {
@@ -15,6 +15,12 @@ export class AppController {
   @Get('ab*cd')
   getWildcard(): string {
     return 'This route uses a wildcard';
+  }
+
+  @Get(':name')
+  getHelloWithName(@Param() params: { name: string }): string {
+    console.log(params.name);
+    return `Hello, ${params.name}!`;
   }
 }
 
