@@ -1,4 +1,4 @@
-import { Controller, Get, Param } from '@nestjs/common';
+import { Body, Controller, Get, Param, Post, Req } from '@nestjs/common';
 
 @Controller('greetings')
 export class AppController {
@@ -29,21 +29,21 @@ export class AppController {
     return `Good morning, ${params.name}!`;
   }
 
-  // @Get('good-afternoon/request')
-  // getGoodAfternoonRequest(@Req() request: Request): string {
-  //   console.log(request);
-  //   return `${request}`;
-  // }
+  @Get('good-afternoon/request')
+  getGoodAfternoonRequest(@Req() request: Request): string {
+    console.log(request);
+    return `${request}`;
+  }
 
-  // @Get('good-afternoon/query')
-  // getGoodAfternoonQuery(@Req() request: Request): string {
-  //   return `${request}`;
-  // }
+  @Get('good-afternoon/query')
+  getGoodAfternoonQuery(@Req() request: Request): string {
+    return `${request}`;
+  }
 
-  // @Post('good-afternoon/body')
-  // postGoodAfternoon(@Body('name') name: string): string {
-  //   return `Good afternoon, ${name}!`;
-  // }
+  @Post('good-afternoon/body')
+  postGoodAfternoon(@Body('name') name: string): string {
+    return `Good afternoon, ${name}!`;
+  }
 }
 
 // import { AppService } from './app.service';
