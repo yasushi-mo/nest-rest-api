@@ -1,4 +1,4 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Param } from '@nestjs/common';
 
 @Controller('controllers')
 export class AppController {
@@ -16,13 +16,12 @@ export class AppController {
   getWildCard(): string {
     return 'WildCardController';
   }
-}
 
-// @Get('/hello/:name')
-// getHelloWithName(@Param('name') name: string): string {
-//   console.log(name);
-//   return `Hello, ${name}!`;
-// }
+  @Get('/route-parameters/:param')
+  getRouteParameters(@Param('param') param: string): string {
+    return `RouteParameter return param: ${param}`;
+  }
+}
 
 // @Get('good-morning/:name')
 // getGoodMorningWithName(@Param() params: { name: string }): string {
