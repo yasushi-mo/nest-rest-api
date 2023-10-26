@@ -17,7 +17,7 @@ export class AppController {
     return 'WildCardController';
   }
 
-  @Get('/route-parameters/:param')
+  @Get('route-parameters/:param')
   getRouteParameters(@Param('param') param: string): string {
     return `RouteParameter return param: ${param}`;
   }
