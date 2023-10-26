@@ -1,4 +1,5 @@
-import { Controller, Get, Param } from '@nestjs/common';
+import { Controller, Get, Param, Req } from '@nestjs/common';
+import { Request } from 'express';
 
 @Controller('controllers')
 export class AppController {
@@ -17,9 +18,16 @@ export class AppController {
     return 'WildCardController';
   }
 
-  @Get('route-parameters/:param')
-  getRouteParameters(@Param('param') param: string): string {
-    return `RouteParameter return param: ${param}`;
+  @Get('path-parameters/:param')
+  getPathParameters(@Param('param') param: string): string {
+    return `PathParameter returns param: ${param}`;
+  }
+
+  @Get('request-object/:param')
+  getRequestObject(@Req() request: Request): string {
+    return `RequestObjectController returns path param:  ${JSON.stringify(
+      request.params,
+    )}, query param: ${JSON.stringify(request.query)}`;
   }
 }
 
