@@ -30,25 +30,3 @@ export class AppController {
     )}, query param: ${JSON.stringify(request.query)}`;
   }
 }
-
-// @Get('good-morning/:name')
-// getGoodMorningWithName(@Param() params: { name: string }): string {
-//   console.log(params);
-//   return `Good morning, ${params.name}!`;
-// }
-
-// @Get('good-morning/request')
-// getGoodMorningRequest(@Req() request: Request): string {
-//   console.log(request);
-//   return 'good-morning/request';
-// }
-
-// @Get('good-afternoon/query')
-// getGoodAfternoonQuery(@Req() request: Request): string {
-//   return `${request}`;
-// }
-
-// @Post('good-afternoon/body')
-// postGoodAfternoon(@Body('name') name: string): string {
-//   return `Good afternoon, ${name}!`;
-// }
