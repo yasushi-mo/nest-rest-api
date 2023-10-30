@@ -1,4 +1,4 @@
-import { Controller, Get, Param, Query, Req } from '@nestjs/common';
+import { Body, Controller, Get, Param, Post, Query, Req } from '@nestjs/common';
 import { Request } from 'express';
 
 @Controller('controllers')
@@ -33,5 +33,10 @@ export class AppController {
   @Get('query-parameters')
   getQueryParameters(@Query() param: string): string {
     return `QueryParametersController returns param: ${JSON.stringify(param)}`;
+  }
+
+  @Post('request-body')
+  postRequestBody(@Body() body: string): string {
+    return `RequestBodyController returns body: ${JSON.stringify(body)}`;
   }
 }
