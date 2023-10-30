@@ -1,4 +1,4 @@
-import { Controller, Get, Param, Req } from '@nestjs/common';
+import { Controller, Get, Param, Query, Req } from '@nestjs/common';
 import { Request } from 'express';
 
 @Controller('controllers')
@@ -20,7 +20,7 @@ export class AppController {
 
   @Get('path-parameters/:param')
   getPathParameters(@Param('param') param: string): string {
-    return `PathParameter returns param: ${param}`;
+    return `PathParameterController returns param: ${param}`;
   }
 
   @Get('request-object/:param')
@@ -28,5 +28,10 @@ export class AppController {
     return `RequestObjectController returns path param:  ${JSON.stringify(
       request.params,
     )}, query param: ${JSON.stringify(request.query)}`;
+  }
+
+  @Get('query-parameters')
+  getQueryParameters(@Query() param: string): string {
+    return `QueryParametersController returns param: ${JSON.stringify(param)}`;
   }
 }
