@@ -18,5 +18,13 @@ describe('AppController', () => {
     it('should return "RootController"', () => {
       expect(appController.getRoot()).toBe('RootController');
     });
+
+    it('should return "MethodController"', () => {
+      expect(appController.getMethod()).toBe('MethodController');
+    });
+
+    it('should return "WildCardController"', () => {
+      expect(appController.getWildCard()).toBe('WildCardController');
+    });
   });
 });
