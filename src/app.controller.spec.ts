@@ -26,5 +26,11 @@ describe('AppController', () => {
     it('should return "WildCardController"', () => {
       expect(appController.getWildCard()).toBe('WildCardController');
     });
+
+    it('should return "PathParameterController returns param: test"', () => {
+      expect(appController.getPathParameters('test')).toBe(
+        `PathParameterController returns param: test`,
+      );
+    });
   });
 });
