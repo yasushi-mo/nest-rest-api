@@ -32,5 +32,17 @@ describe('AppController', () => {
         `PathParameterController returns param: test`,
       );
     });
+
+    // it('RequestObjectController returns path param: test"', () => {
+    //   expect(appController.getRequestObject({})).toBe(
+    //     `RequestObjectController returns path param: test`,
+    //   );
+    // });
+
+    it('should return "QueryParametersController returns param: test"', () => {
+      expect(appController.getQueryParameters('test')).toBe(
+        `QueryParametersController returns param: "test"`,
+      );
+    });
   });
 });
