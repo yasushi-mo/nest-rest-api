@@ -44,5 +44,11 @@ describe('AppController', () => {
         `QueryParametersController returns param: "test"`,
       );
     });
+
+    it('should return "RequestBodyController returns body: test"', () => {
+      expect(appController.postRequestBody('test')).toBe(
+        'RequestBodyController returns body: "test"',
+      );
+    });
   });
 });
