@@ -33,6 +33,7 @@ describe('AppController', () => {
       );
     });
 
+    // TODO
     // it('RequestObjectController returns path param: test"', () => {
     //   expect(appController.getRequestObject({})).toBe(
     //     `RequestObjectController returns path param: test`,
