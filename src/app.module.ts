@@ -10,7 +10,7 @@ import { CatsService } from './services/cats.service';
     TypeOrmModule.forRoot({
       type: 'mysql',
       host: 'localhost',
-      port: 3001,
+      port: 3306,
       username: 'root',
       password: 'password',
       database: 'blog_app',
