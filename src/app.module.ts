@@ -2,8 +2,8 @@ import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { CatsModule } from './modules/cats.module';
-import { CatsService } from './services/cats.service';
+import { CatsModule } from './cats/cats.module';
+import { CatsService } from './cats/cats.service';
 
 @Module({
   imports: [
