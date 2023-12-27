@@ -11,11 +11,12 @@ export class CatsService {
     private catsRepository: Repository<Cat>,
   ) {}
 
-  create(cat: CreateCatDTO) {
-    this.catsRepository.create(cat);
+  async create(cat: CreateCatDTO): Promise<Cat> {
+    const createdCat = this.catsRepository.create(cat);
+    return this.catsRepository.save(createdCat);
   }
 
-  findAll(): Promise<Cat[]> {
+  async findAll(): Promise<Cat[]> {
     return this.catsRepository.find();
   }
 }
