@@ -1,6 +1,5 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { DataSource } from 'typeorm';
 import { Cat } from './cats/cat.entity';
 import { CatsModule } from './cats/cats.module';
 
@@ -20,6 +19,4 @@ import { CatsModule } from './cats/cats.module';
     CatsModule,
   ],
 })
-export class AppModule {
-  constructor(private dataSource: DataSource) {}
-}
+export class AppModule {}
