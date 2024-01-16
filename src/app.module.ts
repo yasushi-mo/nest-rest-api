@@ -1,7 +1,8 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Cat } from './cats/cat.entity';
-import { CatsModule } from './cats/cats.module';
+import { CatsController } from './cats/cats.controller';
+import { CatsService } from './cats/cats.service';
 
 @Module({
   imports: [
@@ -16,7 +17,9 @@ import { CatsModule } from './cats/cats.module';
       synchronize: true,
       retryAttempts: 3,
     }),
-    CatsModule,
+    TypeOrmModule.forFeature([Cat]),
   ],
+  controllers: [CatsController],
+  providers: [CatsService],
 })
 export class AppModule {}
