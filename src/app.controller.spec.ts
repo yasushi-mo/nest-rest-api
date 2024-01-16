@@ -1,8 +1,8 @@
-import { Test, TestingModule } from '@nestjs/testing';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
+import { Test, TestingModule } from "@nestjs/testing";
+import { AppController } from "./app.controller";
+import { AppService } from "./app.service";
 
-describe('AppController', () => {
+describe("AppController", () => {
   let appController: AppController;
 
   beforeEach(async () => {
@@ -14,21 +14,21 @@ describe('AppController', () => {
     appController = app.get<AppController>(AppController);
   });
 
-  describe('root', () => {
+  describe("root", () => {
     it('should return "RootController"', () => {
-      expect(appController.getRoot()).toBe('RootController');
+      expect(appController.getRoot()).toBe("RootController");
     });
 
     it('should return "MethodController"', () => {
-      expect(appController.getMethod()).toBe('MethodController');
+      expect(appController.getMethod()).toBe("MethodController");
     });
 
     it('should return "WildCardController"', () => {
-      expect(appController.getWildCard()).toBe('WildCardController');
+      expect(appController.getWildCard()).toBe("WildCardController");
     });
 
     it('should return "PathParameterController returns param: test"', () => {
-      expect(appController.getPathParameters('test')).toBe(
+      expect(appController.getPathParameters("test")).toBe(
         `PathParameterController returns param: test`,
       );
     });
@@ -41,13 +41,13 @@ describe('AppController', () => {
     // });
 
     it('should return "QueryParametersController returns param: test"', () => {
-      expect(appController.getQueryParameters('test')).toBe(
+      expect(appController.getQueryParameters("test")).toBe(
         `QueryParametersController returns param: "test"`,
       );
     });
 
     it('should return "RequestBodyController returns body: test"', () => {
-      expect(appController.postRequestBody('test')).toBe(
+      expect(appController.postRequestBody("test")).toBe(
         'RequestBodyController returns body: "test"',
       );
     });

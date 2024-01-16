@@ -1,11 +1,11 @@
-import { Injectable } from '@nestjs/common';
-import { CatsService } from './cats/cats.service';
+import { Injectable } from "@nestjs/common";
+import { CatsService } from "./cats/cats.service";
 
 @Injectable()
 export class AppService {
   constructor(private catsService: CatsService) {}
 
   getHello(): string {
-    return 'Hello World!';
+    return "Hello World!";
   }
 }

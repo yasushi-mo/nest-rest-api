@@ -1,41 +1,41 @@
-import { Body, Controller, Get, Param, Post, Query, Req } from '@nestjs/common';
-import { Request } from 'express';
+import { Body, Controller, Get, Param, Post, Query, Req } from "@nestjs/common";
+import { Request } from "express";
 
-@Controller('controllers')
+@Controller("controllers")
 export class AppController {
   @Get()
   getRoot(): string {
-    return 'RootController';
+    return "RootController";
   }
 
-  @Get('method')
+  @Get("method")
   getMethod(): string {
-    return 'MethodController';
+    return "MethodController";
   }
 
-  @Get('wild*card')
+  @Get("wild*card")
   getWildCard(): string {
-    return 'WildCardController';
+    return "WildCardController";
   }
 
-  @Get('path-parameters/:param')
-  getPathParameters(@Param('param') param: string): string {
+  @Get("path-parameters/:param")
+  getPathParameters(@Param("param") param: string): string {
     return `PathParameterController returns param: ${param}`;
   }
 
-  @Get('request-object/:param')
+  @Get("request-object/:param")
   getRequestObject(@Req() request: Request): string {
     return `RequestObjectController returns path param:  ${JSON.stringify(
       request.params,
     )}, query param: ${JSON.stringify(request.query)}`;
   }
 
-  @Get('query-parameters')
+  @Get("query-parameters")
   getQueryParameters(@Query() param: string): string {
     return `QueryParametersController returns param: ${JSON.stringify(param)}`;
   }
 
-  @Post('request-body')
+  @Post("request-body")
   postRequestBody(@Body() body: string): string {
     return `RequestBodyController returns body: ${JSON.stringify(body)}`;
   }
