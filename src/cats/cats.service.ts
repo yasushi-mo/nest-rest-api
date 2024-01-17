@@ -19,4 +19,8 @@ export class CatsService {
     const createdCat = this.catsRepository.create(cat);
     return this.catsRepository.save(createdCat);
   }
+
+  async delete(id: number): Promise<void> {
+    await this.catsRepository.delete(id);
+  }
 }
