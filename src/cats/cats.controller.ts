@@ -7,12 +7,13 @@ import { CreateCatDTO } from "src/cats/create-cat.dto";
 export class CatsController {
   constructor(private catsService: CatsService) {}
 
-  @Post()
-  async create(@Body() createCatDto: CreateCatDTO) {
-    this.catsService.create(createCatDto);
-  }
   @Get()
   async findAll(): Promise<Cat[]> {
     return this.catsService.findAll();
+  }
+
+  @Post()
+  async create(@Body() createCatDto: CreateCatDTO) {
+    this.catsService.create(createCatDto);
   }
 }
