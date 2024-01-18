@@ -21,22 +21,25 @@ export class CatsController {
   }
 
   @Get(":id")
-  async findOne(@Param("id") id: number) {
+  async findOne(@Param("id") id: number): Promise<Cat | null> {
     return this.catsService.findOne(id);
   }
 
   @Post()
-  async create(@Body() createCatDto: CreateCatDTO) {
+  async create(@Body() createCatDto: CreateCatDTO): Promise<void> {
     this.catsService.create(createCatDto);
   }
 
   @Put(":id")
-  async update(@Param("id") id: number, @Body() updateCatDto: CreateCatDTO) {
+  async update(
+    @Param("id") id: number,
+    @Body() updateCatDto: CreateCatDTO,
+  ): Promise<Cat | null> {
     return this.catsService.update(id, updateCatDto);
   }
 
   @Delete(":id")
-  remove(@Param("id") id: number) {
+  remove(@Param("id") id: number): Promise<void> {
     return this.catsService.delete(id);
   }
 }
