@@ -20,6 +20,11 @@ export class CatsService {
     return this.catsRepository.save(createdCat);
   }
 
+  async update(id: number, cat: CreateCatDTO): Promise<Cat | null> {
+    await this.catsRepository.update(id, cat);
+    return this.catsRepository.findOne({ where: { id } }) || null;
+  }
+
   async delete(id: number): Promise<void> {
     await this.catsRepository.delete(id);
   }
