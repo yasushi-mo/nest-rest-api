@@ -15,6 +15,10 @@ export class CatsService {
     return this.catsRepository.find();
   }
 
+  async findOne(id: number): Promise<Cat | null> {
+    return this.catsRepository.findOne({ where: { id } }) || null;
+  }
+
   async create(cat: CreateCatDTO): Promise<Cat> {
     const createdCat = this.catsRepository.create(cat);
     return this.catsRepository.save(createdCat);

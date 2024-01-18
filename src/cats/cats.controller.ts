@@ -20,6 +20,11 @@ export class CatsController {
     return this.catsService.findAll();
   }
 
+  @Get(":id")
+  async findOne(@Param("id") id: number) {
+    return this.catsService.findOne(id);
+  }
+
   @Post()
   async create(@Body() createCatDto: CreateCatDTO) {
     this.catsService.create(createCatDto);
