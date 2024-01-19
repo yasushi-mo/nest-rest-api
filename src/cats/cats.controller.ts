@@ -7,9 +7,9 @@ import {
   Post,
   Put,
 } from "@nestjs/common";
+import { CatDTO } from "src/cats/cat.dto";
 import { Cat } from "src/cats/cat.interface";
 import { CatsService } from "src/cats/cats.service";
-import { CreateCatDTO } from "src/cats/create-cat.dto";
 
 @Controller("cats")
 export class CatsController {
@@ -26,14 +26,14 @@ export class CatsController {
   }
 
   @Post()
-  async create(@Body() createCatDto: CreateCatDTO): Promise<void> {
+  async create(@Body() createCatDto: CatDTO): Promise<void> {
     this.catsService.create(createCatDto);
   }
 
   @Put(":id")
   async update(
     @Param("id") id: number,
-    @Body() updateCatDto: CreateCatDTO,
+    @Body() updateCatDto: CatDTO,
   ): Promise<Cat | null> {
     return this.catsService.update(id, updateCatDto);
   }

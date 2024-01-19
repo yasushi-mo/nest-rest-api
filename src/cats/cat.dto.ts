@@ -1,6 +1,6 @@
 import { ApiProperty } from "@nestjs/swagger";
 
-export class CreateCatDTO {
+export class CatDTO {
   @ApiProperty()
   name: string;
 
