@@ -1,16 +1,27 @@
 import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
-@Entity()
+@Entity("cats")
 export class Cat {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column()
+  @Column({
+    type: "varchar",
+    length: 30,
+    nullable: false,
+  })
   name: string;
 
-  @Column()
+  @Column({
+    type: "int",
+    nullable: false,
+  })
   age: number;
 
-  @Column()
+  @Column({
+    type: "varchar",
+    length: 30,
+    nullable: false,
+  })
   breed: string;
 }
