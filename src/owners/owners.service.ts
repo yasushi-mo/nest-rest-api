@@ -5,7 +5,7 @@ import { OwnerDTO } from "./owner.dto";
 import { Owner } from "./owner.entity";
 
 @Injectable()
-export class OwnerService {
+export class OwnersService {
   constructor(
     @InjectRepository(Owner)
     private ownersRepository: Repository<Owner>,
