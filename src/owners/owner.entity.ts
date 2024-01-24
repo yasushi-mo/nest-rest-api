@@ -13,8 +13,8 @@ export class Owners {
   name: string;
 
   @Column({
-    type: "date",
+    type: "int",
     nullable: false,
   })
-  dateOfBirth: Date;
+  age: number;
 }

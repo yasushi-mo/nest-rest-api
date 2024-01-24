@@ -1,5 +1,5 @@
 export interface Owner {
   id: number;
   name: string;
-  dateOfBirth: Date;
+  age: number;
 }
