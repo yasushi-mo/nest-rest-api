@@ -15,4 +15,8 @@ export class CatDTO {
   @IsString()
   @Length(1, 30)
   breed: string;
+
+  @ApiProperty()
+  @IsInt()
+  ownerId: number;
 }
