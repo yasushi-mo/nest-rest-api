@@ -1,6 +1,6 @@
-FROM node:20-alpine3.18
+FROM node:21-alpine3.18
 
-ENV NODE_VERSION 20.10.0
+ENV NODE_VERSION 20.11.1
 
 WORKDIR /api
 
