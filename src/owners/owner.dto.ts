@@ -1,5 +1,5 @@
 import { ApiProperty } from "@nestjs/swagger";
-import { IsDate, IsString, Length } from "class-validator";
+import { IsArray, IsInt, IsString, Length } from "class-validator";
 
 export class OwnerDTO {
   @ApiProperty()
@@ -8,6 +8,10 @@ export class OwnerDTO {
   name: string;
 
   @ApiProperty()
-  @IsDate()
-  dateOfBirth: Date;
+  @IsInt()
+  age: number;
+
+  @ApiProperty({ type: [Number] })
+  @IsArray()
+  catIds: number[];
 }

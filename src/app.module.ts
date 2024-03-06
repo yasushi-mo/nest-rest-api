@@ -3,6 +3,9 @@ import { TypeOrmModule } from "@nestjs/typeorm";
 import { Cat } from "./cats/cat.entity";
 import { CatsController } from "./cats/cats.controller";
 import { CatsService } from "./cats/cats.service";
+import { Owner } from "./owners/owner.entity";
+import { OwnersController } from "./owners/owners.controller";
+import { OwnersService } from "./owners/owners.service";
 
 @Module({
   imports: [
@@ -13,13 +16,13 @@ import { CatsService } from "./cats/cats.service";
       username: "root",
       password: "password",
       database: "nest_app",
-      entities: [Cat],
+      entities: [Cat, Owner],
       synchronize: true,
       retryAttempts: 3,
     }),
-    TypeOrmModule.forFeature([Cat]),
+    TypeOrmModule.forFeature([Cat, Owner]),
   ],
-  controllers: [CatsController],
-  providers: [CatsService],
+  controllers: [CatsController, OwnersController],
+  providers: [CatsService, OwnersService],
 })
 export class AppModule {}
