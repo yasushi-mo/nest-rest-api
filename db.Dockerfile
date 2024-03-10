@@ -2,6 +2,10 @@
 FROM mysql:8.3.0
 
 # Set environment variables for MySQL configuration
-ENV MYSQL_DATABASE="nest_app" \
-    MYSQL_USER="root" \
-    MYSQL_PASSWORD="password"
+ENV MYSQL_DATABASE=nest_app \
+    MYSQL_USER=root \
+    MYSQL_PASSWORD=password \
+    MYSQL_ROOT_PASSWORD=password
+
+# Expose the MySQL port
+EXPOSE 3306
