@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  nest-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3001:3001"
+    environment:
+      DB_HOST: nest-api-mysql-container
+      DB_USER: root
+      DB_PASSWORD: password
+      DB_NAME: nest_api
+    depends_on:
+      - nest-api-mysql-container
+
+  nest-api-mysql-container:
+    build:
+      context: .
+      dockerfile: db.Dockerfile
+    environment:
+      MYSQL_DATABASE: nest_api
+      MYSQL_ROOT_PASSWORD: password
+    ports:
+      - "3306:3306"
+  
