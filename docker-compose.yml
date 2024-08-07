@@ -1,27 +1,33 @@
-version: '3'
+version: "3.8"
 
 services:
-  nest-api:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    ports:
-      - "3001:3001"
+  nest-app:
     environment:
-      DB_HOST: nest-api-mysql-container
+      DB_HOST: db
       DB_USER: root
       DB_PASSWORD: password
-      DB_NAME: nest_api
-    depends_on:
-      - nest-api-mysql-container
-
-  nest-api-mysql-container:
-    build:
-      context: .
-      dockerfile: db.Dockerfile
+      DB_DATABASE: sample
+    ports:
+      - "3001:3001"
+    build: .
+    # volumes:
+    #   - type: bind
+    #     source: ./src
+    #     target: /user/src/app
+    # depends_on:
+    #   - db
+  db:
     environment:
-      MYSQL_DATABASE: nest_api
       MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: sample
+      # MYSQL_USER: user
+      # MYSQL_PASSWORD: userpassword
     ports:
       - "3306:3306"
-  
+    volumes:
+      - type: volume
+        source: db-volume
+        target: /var/lib/mysql
+    image: mysql:8.4.0
+volumes:
+  db-volume:
