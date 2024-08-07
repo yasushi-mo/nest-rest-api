@@ -1,5 +1,5 @@
 # Use the official Node.js image as the base image
-FROM node:21-alpine3.18
+FROM node:20-alpine3.19
 
 # Set the working directory inside the container
 WORKDIR /app
@@ -8,12 +8,13 @@ WORKDIR /app
 COPY package*.json ./
 
 # Install dependencies
-# For reduced image size, faster build times, and security, add "--production" flag
-# It means npm will skip installing packages listed in the devDependencies
-RUN npm install --production
+RUN npm install
 
 # Copy the rest of your application code to the working directory
 COPY . .
+
+# Build the NestJS application
+RUN npm run build
 
 # Expose the port your app runs on
 EXPOSE 3001
