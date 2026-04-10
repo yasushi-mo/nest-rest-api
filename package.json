@@ -24,7 +24,7 @@
     "@nestjs/common": "^11.1.16",
     "@nestjs/core": "^11.1.15",
     "@nestjs/platform-express": "^11.1.16",
-    "@nestjs/swagger": "^11.2.6",
+    "@nestjs/swagger": "^11.2.7",
     "@nestjs/typeorm": "^11.0.0",
     "class-validator": "^0.14.1",
     "mysql2": "^3.14.1",
