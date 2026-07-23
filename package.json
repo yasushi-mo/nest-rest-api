@@ -23,7 +23,7 @@
   "dependencies": {
     "@nestjs/common": "^11.1.16",
     "@nestjs/core": "^11.1.18",
-    "@nestjs/platform-express": "^11.1.23",
+    "@nestjs/platform-express": "^11.1.28",
     "@nestjs/swagger": "^11.4.4",
     "@nestjs/typeorm": "^11.0.0",
     "class-validator": "^0.14.1",
